@@ -8,6 +8,8 @@ export default function Nav(){
     console.log(search)
     return(
         <div className="nav">
+            <center>
+            <div className="nav-box">
             <div className='title'>
 IremRyuk
             </div>
@@ -23,6 +25,7 @@ IremRyuk
             <FavoriteIcon className='fave' fontSize="large"/>
 </Badge>
             </div>
+            </div></center>
         </div>
     )
 }
