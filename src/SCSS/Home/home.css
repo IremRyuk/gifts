@@ -1,0 +1,27 @@
+.chat {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  width: 60px;
+  height: 60px;
+  background-color: #ed889a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.chat:hover {
+  scale: 1.15;
+}
+
+.home {
+  margin-left: 100px;
+  margin: 10vh;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: white;
+  height: 80vh;
+  border: 2px solid red;
+}/*# sourceMappingURL=home.css.map */
