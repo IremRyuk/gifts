@@ -2,15 +2,18 @@ import '../SCSS/Nav/nav.css'
 import { useState } from 'react'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Badge from '@mui/material/Badge';
+import { useDispatch } from 'react-redux';
+import { SearchAction } from '../Redux/Action/SearchAction';
 
 export default function Nav(){
     const [search,setSearch] = useState('')
+    const dispatch = useDispatch()
     console.log(search)
     return(
         <div className="nav">
             <center>
             <div className="nav-box">
-            <div className='title'>
+            <div className='title' onClick={()=>dispatch(SearchAction(null))}>
 IremRyuk
             </div>
             <div className='search'>
