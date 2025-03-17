@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .nav {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 99999999999;
@@ -57,7 +57,7 @@
 
 // Left Navigation
 .leftNav {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 70px;

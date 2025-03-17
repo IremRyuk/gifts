@@ -8,7 +8,6 @@ import { SearchAction } from '../Redux/Action/SearchAction';
 export default function Nav(){
     const [search,setSearch] = useState('')
     const dispatch = useDispatch()
-    console.log(search)
     return(
         <div className="nav">
             <center>

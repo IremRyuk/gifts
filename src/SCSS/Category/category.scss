@@ -1,40 +1,58 @@
-.cat-page{
+.cat-page {
     width: 100%;
-    height:250px;
+    height: 250px;
     display: flex;
     flex-direction: column;
 }
-.cat-f-text{
+.cat-f-text {
     font-size: 24px;
 }
-.cat-col{
+.cat-col {
     width: 70%;
     height: 250px;
     gap: 10px;
+    margin:10px 0px;
     padding: 10px;
-    box-shadow: 0px 2px 10px #ed889a;
+    box-shadow: 0 2px 20px snow;
     border-radius: 2.4mm;
-    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
-.archeva{
+.cat-col-err{
+    width: 70%;
+    height: 250px;
+    gap: 10px;
+    margin:10px 0px;
+    padding: 10px;
+    box-shadow: 0 2px 20px red;
+    border-radius: 2.4mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.archeva {
     border-radius: 2.4mm;
     color: white;
     font-size: 25px;
     border: none;
     padding: 5px 20px;
-    border-bottom: 10px solid #d8788a;
     background-color: #ed889a;
     transition: 0.2s;
     cursor: pointer;
-    &:active{
-        border-bottom: 5px solid #d8788a;
-    }   
+    &:hover{
+        scale: 1.1;
+    }
+    &:active {
+        background-color: #d87c8d;
+        scale: 1.05;
+    }
 }
-.archevaN{
+.archevaN {
     border-radius: 2.4mm;
     color: white;
     font-size: 25px;
@@ -42,5 +60,16 @@
     padding: 5px 20px;
     background-color: gray;
     transition: 0.2s;
-    cursor: pointer;
+    cursor:no-drop;
+}
+.cat-slider {
+    width: 70%;
+    }
+
+.cat-col-date{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
