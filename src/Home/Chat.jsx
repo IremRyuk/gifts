@@ -15,7 +15,7 @@ export default function Chat() {
         <SpeedDial
         ariaLabel="SpeedDial openIcon example"
         sx={{ position: 'fixed', bottom:'5%', right:'5%'}}
-        icon={<ChatIcon openIcon={<ChatIcon sx={{bgcolor:'green',transition:'0.2s','&:hover':{scale: '1.15'}}}/>} />}
+        icon={<ChatIcon openicon={<ChatIcon sx={{bgcolor:'green',transition:'0.2s','&:hover':{scale: '1.15'}}}/>} />}
       >
         {actions.map((action) => (
           <SpeedDialAction

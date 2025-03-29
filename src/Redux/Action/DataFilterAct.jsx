@@ -4,6 +4,9 @@ export const DataFilterAct = (dataAdd) => {
 export const DataFilterRemoveAct = (dataRemove) => {
     return {type:'dataRemove',dataRemove}
 }
-export let FilterAct = (changePrice) =>{
-    return {type:'changePrice',changePrice}
+export const DataMin = (minBud) => {
+    return {type:'minBud',minBud}
+}
+export const DataMax = (maxBud) => {
+    return {type:'maxBud',maxBud}
 }

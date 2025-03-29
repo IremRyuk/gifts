@@ -5,9 +5,15 @@ export const DataFilterRed = (state=[],action) => {
         default: return state
     }
 }
-export let FilterPrice = (state= [1,1000],action) =>{
-    switch (action.type) {
-        case 'changePrice':return state = action.changePrice
-        default:return state
+export const DataMinBud = (state='',action) => {
+    switch(action.type){
+        case 'minBud' : return state = action.minBud
+        default: return state
+    }
+}
+export const DataMaxBud = (state='',action) => {
+    switch(action.type){
+        case 'maxBud' : return state = action.maxBud
+        default: return state
     }
 }

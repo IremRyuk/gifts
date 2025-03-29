@@ -2,6 +2,7 @@ import '../SCSS/Home/home.css'
 import Lady from '../Category/Lady'
 import Man from '../Category/Man'
 import { useSelector } from 'react-redux'
+import SlideShow from './SlideShow'
 
 export default function Home () {
     const searched = useSelector((state)=>state.search)
@@ -11,7 +12,7 @@ export default function Home () {
         ?<Man />
         :searched=='lady'
         ?<Lady />
-        :<p>Nothing</p>
+        :<SlideShow />
         }
         </div>
     )

@@ -2,18 +2,24 @@ import { useState } from 'react'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import '../SCSS/Category/category.css'
-import { FormGroup,FormControlLabel,Checkbox,Slider,Stack } from '@mui/material'
+import { FormGroup,FormControlLabel,Checkbox,Switch } from '@mui/material'
 import Datas from '../Res/lady.json'
 import { useDispatch,useSelector } from 'react-redux'
-import {DataFilterAct,DataFilterRemoveAct, FilterAct} from '../Redux/Action/DataFilterAct'
+import {DataFilterAct,DataFilterRemoveAct,DataMin,DataMax} from '../Redux/Action/DataFilterAct'
 export default function Man(){
     const dispatch = useDispatch()
+    // Choose Gifts
     const data = useSelector(res=>{return res.dataFilter})
-    const range = useSelector(state=>state.price)
+    // Budget
+    const minBud = useSelector(res=>{return res.minBud})
+    const maxBud = useSelector(res=>{return res.maxBud})
     // Date
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
-    console.log()
+    // Restoraunt
+    const [rest,setRest] = useState(false)
+    const [hotel,setHotel] = useState(false)
+    console.log(rest,hotel)
     // add / remove
     // console.log(data)
     const addName = (names) => {
@@ -33,6 +39,8 @@ const ArchevaSachuqris = () =>{
     const datas = Datas
     return(
         <center><div className="cat-page">
+            {/* Gifts */}
+
             <center><div className='cat-col'>
 <p className='cat-f-text'>აირჩიეთ კაცის საჩუქრები</p>
 <FormGroup sx={{display:'grid',gridTemplateColumns:'30% 30% 30%',width:'100%',alignItems:'center',alignSelf:'center',justifyContent:'center', textAlign:'start'}}>
@@ -44,21 +52,20 @@ const ArchevaSachuqris = () =>{
 </FormGroup>
 {data.length === 0?<button className='archevaN'>არჩევა</button>:<button onClick={()=>ArchevaSachuqris()} className='archeva'>არჩევა</button>}
         </div></center>
-        <center><div className='cat-col'>
-        <p className='cat-f-text'>აირჩიეთ ბიუჯეტი</p>
-  <Slider
-  min={1}
-  max={1000}
-  value={range}
-  sx={{color:'pink',width:'70%'}}
-  onChange={(_e,newValue)=>{dispatch(FilterAct(newValue))}}
-  valueLabelDisplay='auto'
-  />
-  <Stack direction='row' sx={{display:'flex',width:'70%', justifyContent:'center'}}>
-  <p className='cat-f-text'>{range[0]}-დან  &nbsp;  {range[1]}-მდე</p>
-  </Stack>
-</div></center>
-{/* Test */}
+
+
+           {/* Restourant */}
+
+           <center><div className='cat-col'>
+           <FormGroup>
+              <FormControlLabel control={<Switch onClick={()=>setRest(e=>!e)} />} label="რესტორნის ორგანიზება" />
+              <FormControlLabel control={<Switch onClick={()=>setHotel(e=>!e)} />} label="სასტუმროს ორგანიზება" />
+           </FormGroup>
+           </div></center>
+
+
+           {/* Date */}
+
 <center><div className='cat-col'>
 <p className='cat-f-text'>აირჩიეთ თარიღი</p>
     <div className='cat-col-date'>
@@ -72,6 +79,25 @@ const ArchevaSachuqris = () =>{
 </div>
 </div>
 </div></center>
+
+
+             {/* Budget */}
+
+        <center><div className='cat-col'>
+        <p className='cat-f-text'>აირჩიეთ ბიუჯეტი</p>
+        <div className='cat-col-date'>
+            <div>
+        <input type='number' min={1} max={maxBud} placeholder='0' className='cat-bud' onChange={(e)=>dispatch(DataMin(e.target.value))} value={minBud} />
+        {minBud==null?<p className='cat-f-text'> მინიმუმი </p>:<p className='cat-f-text'>მინიმუმი {minBud}</p>}
+        </div>
+        <div>
+        <input type='number' min={minBud} max={9999999} placeholder='10 000' className='cat-bud'onChange={(e)=>dispatch(DataMax(e.target.value))} value={maxBud} />
+        {maxBud==null?<p className='cat-f-text'> მაქსიმუმი </p>:<p className='cat-f-text'>მაქსიმუმი {maxBud}</p>}
+        </div>
+        </div>
+</div></center>
+
+
         </div></center>
     )
 }

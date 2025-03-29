@@ -7,6 +7,7 @@ import {useDispatch} from 'react-redux'
 import {SearchAction} from '../Redux/Action/SearchAction'
 import {Modal,Box ,Typography} from '@mui/material'
 import { useState } from 'react';
+import Home from '../Photoes/home.png'
 export default function LeftNav(){
         let dispatch = useDispatch()
         const [open,setOpen] = useState(false)
@@ -33,6 +34,7 @@ export default function LeftNav(){
 <MenuIcon className='menuBtn' fontSize="large" />
         </div>
         <div className="categories">
+<img src={Home} alt="home" className='imgprofileHome' onClick={()=>Local('')} />
 <img src={Lady} alt="lady" className='imgprofile' onClick={()=>Local('lady')}/>
 <img src={Man} alt="man" className='imgprofile' onClick={()=>Local('man')} />
         </div>

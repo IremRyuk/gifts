@@ -4,6 +4,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Badge from '@mui/material/Badge';
 import { useDispatch } from 'react-redux';
 import { SearchAction } from '../Redux/Action/SearchAction';
+import Title from '../Photoes/p1.svg'
 
 export default function Nav(){
     const [search,setSearch] = useState('')
@@ -13,7 +14,8 @@ export default function Nav(){
             <center>
             <div className="nav-box">
             <div className='title' onClick={()=>dispatch(SearchAction(null))}>
-IremRyuk
+<img src={Title} alt='admired' className='admiredImg'/>
+{/* IMG */}
             </div>
             <div className='search'>
                 <input type='text' 
