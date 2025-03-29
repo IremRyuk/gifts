@@ -42,7 +42,7 @@ const ArchevaSachuqris = () =>{
             {/* Gifts */}
 
             <center><div className='cat-col'>
-<p className='cat-f-text'>აირჩიეთ კაცის საჩუქრები</p>
+<p className='cat-f-text'>აირჩიეთ ქალის საჩუქრები</p>
 <FormGroup sx={{display:'grid',gridTemplateColumns:'30% 30% 30%',width:'100%',alignItems:'center',alignSelf:'center',justifyContent:'center', textAlign:'start'}}>
     {datas.map(res=>(
         <div key={res.id}>
