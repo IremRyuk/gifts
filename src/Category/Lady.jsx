@@ -2,10 +2,15 @@ import { useState } from 'react'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import '../SCSS/Category/category.css'
-import { FormGroup,FormControlLabel,Checkbox,Switch } from '@mui/material'
+import { FormGroup,FormControlLabel,Checkbox,Switch,Button } from '@mui/material'
 import Datas from '../Res/lady.json'
 import { useDispatch,useSelector } from 'react-redux'
 import {DataFilterAct,DataFilterRemoveAct,DataMin,DataMax} from '../Redux/Action/DataFilterAct'
+import GoogleIcon from '@mui/icons-material/Google';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import DeleteIcon from '@mui/icons-material/Delete';
+
+
 export default function Lady(){
     const dispatch = useDispatch()
     // Choose Gifts
@@ -57,10 +62,35 @@ const ArchevaSachuqris = () =>{
            {/* Restourant */}
 
            <center><div className='cat-col'>
-           <FormGroup>
+           <p className='cat-f-text'>თუ გსურთ სასტუმროს ან რესტორნის ორგანიზება , გთხოვთ აირჩიოთ </p>
               <FormControlLabel control={<Switch onClick={()=>setRest(e=>!e)} />} label="რესტორნის ორგანიზება" />
+                {rest == true
+                ?<div className="cat-org-box">
+                <p className='cat-org-text'>ჩვენს მიერ არჩეულ რესტორანში</p>
+                <p className='cat-org-text'> ან თუ გსურთ რესტორნის ორგანიზება თქვენს მიერ არჩეული რესტორანში , შეავსეთ ველი</p>
+                <textarea 
+                placeholder='შეავსეთ ველი ...'
+                className='cat-org-textarea'
+                ></textarea>
+                </div>
+                :null
+                }
+                {/* Xazi */}
+                <div className='cat-line'></div>
+                {/* Xazi */}
               <FormControlLabel control={<Switch onClick={()=>setHotel(e=>!e)} />} label="სასტუმროს ორგანიზება" />
-           </FormGroup>
+              {hotel == true
+                ?<div className="cat-org-box">
+                <p className='cat-org-text'>ჩვენს მიერ არჩეულ სასტუმროში</p>
+                <p className='cat-org-text'> ან თუ გსურთ სასტუმროს ორგანიზება თქვენს მიერ არჩეული სასტუმროში , შეავსეთ ველი</p>
+                <textarea 
+                placeholder='შეავსეთ ველი ...'
+                className='cat-org-textarea'
+                ></textarea>
+                </div>
+                :null
+                }
+
            </div></center>
 
 
@@ -98,6 +128,20 @@ const ArchevaSachuqris = () =>{
 </div></center>
 
 
+            {/* BTN Send */}
+            <center><div className='cat-col'>
+<div className='cat-btn-send'>
+<Button variant="outlined" color="error" sx={{fontSize:'21px'}} startIcon={<DeleteIcon fontSize='large' />} onClick={()=>window.location.reload()}>
+| გასუფთავება გვერდის
+</Button> |
+<Button variant="outlined" color="primary" sx={{fontSize:'21px'}} startIcon={<GoogleIcon />} onClick={()=>alert('gaigzavneba gmailze')}>
+| Gmail - ზე გაგზავნა
+</Button> |
+<Button variant="outlined" color="success" sx={{fontSize:'21px'}} startIcon={<WhatsAppIcon />} onClick={()=>alert('gaigzavneba whatsappze')}>
+| Whatsapp - ზე გაგზავნა
+</Button>
+</div>
+           </div></center>
         </div></center>
     )
 }
