@@ -24,16 +24,15 @@ export default function Man(){
     // Restoraunt
     const [rest,setRest] = useState(false)
     const [hotel,setHotel] = useState(false)
-    console.log(rest,hotel)
     // add / remove
     // console.log(data)
     const addName = (names) => {
         if(!data.includes(names)){
             dispatch(DataFilterAct(names))
-            console.log(data)
+            // console.log(data)
         }else{
             dispatch(DataFilterRemoveAct(names))
-            console.log('gaiwminda',data)
+            // console.log('gaiwminda',data)
         }
     }
 const ArchevaSachuqris = () =>{
@@ -42,6 +41,25 @@ const ArchevaSachuqris = () =>{
 
     // Data
     const datas = Datas
+
+    // Test WhatsApp Send
+    const WhatsAppSend = () => {
+const number = +995592007017
+const datas = data
+const budget = `${minBud } - ${maxBud}`
+const date = `${startDate}-${endDate}`
+const reserve = `რესტორანი - ${rest} || სასტუმრო - ${hotel}`
+
+const wtUrl = 'https://wa.me/'+number+'?text='
++"არჩეული - " + datas+' ; '+"%0a"
++"ბიუჯეტი - " +budget+' ; '+"%0a"
++"თარიღი - " +date+' ; '+"%0a"
++"დაჯავშნა - " +reserve+' ; '+"%0a"
+
+
+window.open(wtUrl,'_blank').focus()
+
+    }
     return(
         <center><div className="cat-page">
             {/* Gifts */}
@@ -137,11 +155,11 @@ const ArchevaSachuqris = () =>{
 <Button variant="outlined" color="error" sx={{fontSize:'21px'}} startIcon={<DeleteIcon fontSize='large' />} onClick={()=>window.location.reload()}>
 | გასუფთავება გვერდის
 </Button> |
-<Button variant="outlined" color="primary" sx={{fontSize:'21px'}} startIcon={<GoogleIcon />} onClick={()=>alert('gaigzavneba gmailze')}>
-| Gmail - ზე გაგზავნა
+<Button variant="outlined" color="primary" sx={{fontSize:'21px'}} startIcon={<GoogleIcon />} onClick={()=>alert('zero')}>
+| გაგზავნა
 </Button> |
-<Button variant="outlined" color="success" sx={{fontSize:'21px'}} startIcon={<WhatsAppIcon />} onClick={()=>alert('gaigzavneba whatsappze')}>
-| Whatsapp - ზე გაგზავნა
+<Button variant="outlined" color="success" sx={{fontSize:'21px'}} startIcon={<WhatsAppIcon />} onClick={()=>WhatsAppSend()}>
+| გაგზავნა
 </Button>
 </div>
            </div></center>

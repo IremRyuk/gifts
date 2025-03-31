@@ -135,10 +135,10 @@ const ArchevaSachuqris = () =>{
 | გასუფთავება გვერდის
 </Button> |
 <Button variant="outlined" color="primary" sx={{fontSize:'21px'}} startIcon={<GoogleIcon />} onClick={()=>alert('gaigzavneba gmailze')}>
-| Gmail - ზე გაგზავნა
+| გაგზავნა
 </Button> |
 <Button variant="outlined" color="success" sx={{fontSize:'21px'}} startIcon={<WhatsAppIcon />} onClick={()=>alert('gaigzavneba whatsappze')}>
-| Whatsapp - ზე გაგზავნა
+| გაგზავნა
 </Button>
 </div>
            </div></center>
