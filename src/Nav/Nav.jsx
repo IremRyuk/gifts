@@ -1,5 +1,5 @@
 import '../SCSS/Nav/nav.css'
-import { useState } from 'react'
+// import { useState } from 'react'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Badge from '@mui/material/Badge';
 import { useDispatch } from 'react-redux';
@@ -7,7 +7,7 @@ import { SearchAction } from '../Redux/Action/SearchAction';
 import Title from '../Photoes/p1.svg'
 
 export default function Nav(){
-    const [search,setSearch] = useState('')
+    // const [search,setSearch] = useState('')
     const dispatch = useDispatch()
     return(
         <div className="nav">
@@ -17,13 +17,17 @@ export default function Nav(){
 <img src={Title} alt='admired' className='admiredImg'/>
 {/* IMG */}
             </div>
-            <div className='search'>
+            
+            {/* Search */}
+
+            {/* <div className='search'>
                 <input type='text' 
                 className='text-input' 
                 placeholder='ძებნა...' 
                 onChange={(e)=>setSearch(e.target.value)}
                 />
-            </div>
+            </div> */}
+
             <div className='title'>
             <Badge badgeContent={0} max={999} color="error" showZero className='faveBadge'>
             <FavoriteIcon className='fave' fontSize="large"/>

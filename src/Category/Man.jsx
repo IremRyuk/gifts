@@ -6,9 +6,12 @@ import { FormGroup,FormControlLabel,Checkbox,Switch,Button } from '@mui/material
 import Datas from '../Res/lady.json'
 import { useDispatch,useSelector } from 'react-redux'
 import {DataFilterAct,DataFilterRemoveAct,DataMin,DataMax} from '../Redux/Action/DataFilterAct'
-import GoogleIcon from '@mui/icons-material/Google';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import DeleteIcon from '@mui/icons-material/Delete';
+// import GoogleIcon from '@mui/icons-material/Google';
+// import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+// import DeleteIcon from '@mui/icons-material/Delete';
+import Gmail from '../Photoes/gmail.webp'
+import Whatsapp from '../Photoes/wts.webp'
+import Remove from '../Photoes/remove.webp'
 
 
 export default function Man(){
@@ -50,11 +53,11 @@ const budget = `${minBud } - ${maxBud}`
 const date = `${startDate}-${endDate}`
 const reserve = `რესტორანი - ${rest} || სასტუმრო - ${hotel}`
 
-const wtUrl = 'https://wa.me/'+number+'?text='
-+"არჩეული - " + datas+' ; '+"%0a"
-+"ბიუჯეტი - " +budget+' ; '+"%0a"
-+"თარიღი - " +date+' ; '+"%0a"
-+"დაჯავშნა - " +reserve+' ; '+"%0a"
+const wtUrl = 'https://wa.me/' + number + '?text='
++ "არჩეული - " + datas +' ; ' + "%0a"
++ "ბიუჯეტი - " + budget +' ; ' + "%0a"
++ "თარიღი - " + date +' ; '+ "%0a"
++ "დაჯავშნა - " + reserve +' ; ' + "%0a"
 
 
 window.open(wtUrl,'_blank').focus()
@@ -151,16 +154,11 @@ window.open(wtUrl,'_blank').focus()
 
             {/* BTN Send */}
             <center><div className='cat-col'>
+            <p className='cat-f-text'>გაგზავნა</p>
 <div className='cat-btn-send'>
-<Button variant="outlined" color="error" sx={{fontSize:'21px'}} startIcon={<DeleteIcon fontSize='large' />} onClick={()=>window.location.reload()}>
-| გასუფთავება გვერდის
-</Button> |
-<Button variant="outlined" color="primary" sx={{fontSize:'21px'}} startIcon={<GoogleIcon />} onClick={()=>alert('zero')}>
-| გაგზავნა
-</Button> |
-<Button variant="outlined" color="success" sx={{fontSize:'21px'}} startIcon={<WhatsAppIcon />} onClick={()=>WhatsAppSend()}>
-| გაგზავნა
-</Button>
+<img src={Remove} alt='remove' onClick={()=>window.location.reload()}className='sendImage remove' title='გვერდის გასუფთავება'/> |
+<img src={Gmail} alt='gmail' className='sendImage gmail' title='გაგზავნა Gmail-ზე'/> |
+<img src={Whatsapp} onClick={()=>WhatsAppSend()} alt='whatsapp' className='sendImage whatsapp' title='გაგზავნა WhatsApp-ზე'/>
 </div>
            </div></center>
         </div></center>
